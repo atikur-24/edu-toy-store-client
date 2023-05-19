@@ -21,12 +21,14 @@ const Navbar = () => {
       <li>
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >All Toys</NavLink>
       </li>
-      <li>
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >My Toys</NavLink>
-      </li>
-      <li>
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >Add A Toy</NavLink>
-      </li>
+      { user && <>
+          <li>
+          <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >My Toys</NavLink>
+        </li>
+        <li>
+          <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >Add A Toy</NavLink>
+        </li>
+      </> }
       <li>
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >Blog</NavLink>
       </li>
