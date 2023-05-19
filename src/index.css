@@ -26,13 +26,6 @@ rgb(181, 222, 244)
   @apply bg-[#003a70] hover:bg-[#003366] rounded-sm md:rounded-md px-3 py-2 md:px-6 md:py-4 text-[18px] font-medium md:font-semibold text-white transition duration-200
 }
 
-/* .slider-btn {
-  @apply bg-[#003a70] hover:bg-[#003366] text-white rounded-full p-3 opacity-80 hover:opacity-100 text-white transition duration-200
-} */
-.slider-btn {
-  @apply text-[#003366] text-3xl md:text-4xl
-}
-
 .active {
   @apply font-medium tracking-wide text-blue-700 transition-colors duration-200 hover:text-blue-400
 }
