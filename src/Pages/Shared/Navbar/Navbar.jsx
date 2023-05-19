@@ -6,8 +6,12 @@ import logo2 from '/public/protoboard2.png'
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+    logOut().then(()=> {}).catch(e=>{console.error(e.message);})
+  }
 
   const menuItems = (
     <>
@@ -31,12 +35,12 @@ const Navbar = () => {
 
   const avatar = (
   <>
-    <div className="avatar">
+    { user && <div className="avatar">
         <div className="w-14 rounded-full">
-            <img title={user?.displayName} src={user?.photoURL} />
+            <img title={user?.displayName} src={user?.photoURL} alt="profile" />
         </div>
-    </div>
-    { user ? <Link to='/signUp' className="my-btn">Logout</Link> :
+    </div>}
+    { user ? <Link onClick={handleLogout} to='/signUp' className="my-btn">Logout</Link> :
     <Link to='/signIn' className="my-btn">Login</Link> }
   </>
 );

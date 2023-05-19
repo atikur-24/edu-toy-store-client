@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import google from '../assets/signUp/google.png'
 
 const SignIn = () => {
-  const { userSignIn, googleSignIn } = useContext(AuthContext);
+  const { userSignIn, googleSignIn, forgotPassword } = useContext(AuthContext);
   const emailRef = useRef();
 
   const handleLogin = event => {
@@ -21,15 +21,11 @@ const SignIn = () => {
 
     // email password sign in
     userSignIn(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
+        .then(() => {
             form.reset();
-
         })
         .catch(error => {
             const message = error.message;
-            console.log(message);
             Swal.fire({
                 title: 'Error!',
                 text: message,
@@ -42,9 +38,7 @@ const SignIn = () => {
 // google sign in
 const handleGoogleLogin = () => {
         googleSignIn()
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
+            .then(() => {
             })
             .catch(error => {
                 const message = error.message;
@@ -53,34 +47,34 @@ const handleGoogleLogin = () => {
 }
 
 // forgot password
-// const handleForgotPassword = () => {
-//     const email = emailRef.current.value;
-//     if (!email) {
-//         return Swal.fire({
-//             title: 'Warning!',
-//             text: 'Please provide valid email address',
-//             icon: 'warning',
-//             confirmButtonText: 'Ok'
-//           })
-//     }
-//     sendPasswordResetEmail(auth, email)
-//         .then( () => {
-//             Swal.fire({
-//                 title: 'Password Reset',
-//                 text: 'Please check your email address',
-//                 icon: 'success',
-//                 confirmButtonText: 'Ok'
-//               })
-//         })
-//         .catch(error => {
-//             Swal.fire({
-//                 title: 'Error!',
-//                 text: error.message,
-//                 icon: 'error',
-//                 confirmButtonText: 'Ok'
-//                 })
-//         })
-//     }
+const handleForgotPassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+        return Swal.fire({
+            title: 'Warning!',
+            text: 'Please provide valid email address',
+            icon: 'warning',
+            confirmButtonText: 'Ok'
+          })
+    }
+    forgotPassword(email)
+        .then( () => {
+            Swal.fire({
+                title: 'Password Reset Successfully!',
+                text: 'Please check your email address',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+              })
+        })
+        .catch(error => {
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'Ok'
+                })
+        })
+    }
 
   return (
     <section>
@@ -108,15 +102,15 @@ const handleGoogleLogin = () => {
                                 </label>
                                 <input required type="password" placeholder="Your password" name="password" className="input input-bordered" />
                                 <label className="label">
-                                    <p className="label-text-alt link link-hover">Forgot password?</p>
+                                    <p onClick={ handleForgotPassword } className="label-text-alt link link-hover">Forgot password?</p>
                                 </label>
                             </div>
                             <div className="form-control">
-                                <input type="submit" value="Login" className='my-btn' />
+                                <input type="submit" value="Login" className='my-btn mb-6' />
                             </div>
-                              <button onClick={handleGoogleLogin} className="social-btn" > <img src={google} alt="google" /> Sign in with Google</button>             
-                            <p className='lg:text-[18px] text-center text-gray-500'>To New Edu Toy Emporium? <Link to='/signUp' className='text-[#003366] font-semibold'>Sign Up</Link></p>
                         </form>
+                            <button onClick={handleGoogleLogin} className="social-btn text-[#003366]" > <img src={google} alt="google" /> Sign in with Google</button>             
+                            <p className='lg:text-[18px] text-center text-gray-500 pt-6 lg:pt-12'>To New Edu Toy Emporium? <Link to='/signUp' className='text-[#003366] font-semibold'>Sign Up</Link></p>
                     </div>
                 </div>
             </div>
