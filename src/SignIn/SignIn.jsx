@@ -1,5 +1,5 @@
 
-const PrivateRoute = () => {
+const SignIn = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const PrivateRoute = () => {
     );
 };
 
-export default PrivateRoute;
+export default SignIn;

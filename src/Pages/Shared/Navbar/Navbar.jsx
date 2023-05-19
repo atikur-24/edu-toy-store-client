@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from '../../../../public/protoboard.png'
 import logo2 from '../../../../public/protoboard2.png'
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useContext(AuthContext);
 
   const menuItems = (
     <>
@@ -31,10 +33,11 @@ const Navbar = () => {
   <>
     <div className="avatar">
         <div className="w-10 rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            {/* <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
         </div>
     </div>
-    <button>Login</button>
+    { user ? <Link to='/signUp' className="my-btn">Logout</Link> :
+    <Link to='/signIn' className="my-btn">Login</Link> }
   </>
 );
 

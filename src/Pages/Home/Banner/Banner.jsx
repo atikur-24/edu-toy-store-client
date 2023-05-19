@@ -12,8 +12,8 @@ const Banner = () => {
                 <a href="#slide3" className="text-[#003366] text-3xl md:text-4xl"> <FaArrowAltCircleLeft /> </a>
                 <a href="#slide2" className="text-[#003366] text-3xl md:text-4xl"> <FaArrowAltCircleRight /> </a>
             </div>
-            <div className='absolute left-1/4 md:left-1/2 md:bottom-24 space-y-4 lg:space-y-7 mr-16 md:mr-20'>
-                <h2 className='text-3xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Pick The Best Toy <br /> For Your Kid</h2>
+            <div className='absolute left-1/4 md:left-1/2 md:bottom-24 space-y-4 lg:space-y-7 mr-10 md:mr-14'>
+                <h2 className='text-2xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Pick The Best Toy For Your Kid</h2>
                 <p className='md:tracking-wide lg:leading-7 capitalize text-sm md:text-[18px] md:font-medium text-gray-600'>Enhance Your Child Development with Our Top-Pick Educational Toys, Sparking Curiosity and Joyful Learning Every Step of the Way</p>
                 <button className='my-btn'>Read More</button>
             </div>                
@@ -25,7 +25,7 @@ const Banner = () => {
                 <a href="#slide3" className="text-[#003366] text-3xl md:text-4xl"> <FaArrowAltCircleRight /> </a>
             </div>
             <div className='absolute left-1/4 md:left-1/2 md:bottom-24 space-y-4 lg:space-y-7 mr-16 md:mr-20'>
-                <h2 className='text-3xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Pick The Best Toy <br /> For Your Kid</h2>
+                <h2 className='text-2xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Discover the Perfect Toy for Your Child </h2>
                 <p className='md:tracking-wide lg:leading-7 capitalize text-sm md:text-[18px] md:font-medium text-gray-600'>Enhance Your Child Development with Our Top-Pick Educational Toys, Sparking Curiosity and Joyful Learning Every Step of the Way</p>
                 <button className='my-btn'>Read More</button>
             </div> 
@@ -37,7 +37,7 @@ const Banner = () => {
                 <a href="#slide1" className="text-[#003366] text-3xl md:text-4xl"> <FaArrowAltCircleRight /> </a>
             </div>
             <div className='absolute left-1/4 md:left-1/2 md:bottom-24 space-y-4 lg:space-y-7 mr-16 md:mr-20'>
-                <h2 className='text-3xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Pick The Best Toy <br /> For Your Kid</h2>
+                <h2 className='text-2xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Find the Perfect Educational <br /> Toy for Every Child</h2>
                 <p className='md:tracking-wide lg:leading-7 capitalize text-sm md:text-[18px] md:font-medium text-gray-600'>Enhance Your Child Development with Our Top-Pick Educational Toys, Sparking Curiosity and Joyful Learning Every Step of the Way</p>
                 <button className='my-btn'>Read More</button>
             </div> 
