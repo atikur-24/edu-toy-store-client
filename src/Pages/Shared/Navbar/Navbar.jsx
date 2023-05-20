@@ -19,7 +19,7 @@ const Navbar = () => {
         <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >Home</NavLink>
       </li>
       <li>
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >All Toys</NavLink>
+        <NavLink to="/allToy" className={({ isActive }) => (isActive ? "active" : "default")} >All Toy</NavLink>
       </li>
       { user && <>
           <li>
@@ -30,7 +30,7 @@ const Navbar = () => {
         </li>
       </> }
       <li>
-        <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >Blog</NavLink>
+        <NavLink to="/blogs" className={({ isActive }) => (isActive ? "active" : "default")} >Blog</NavLink>
       </li>
     </>
   );

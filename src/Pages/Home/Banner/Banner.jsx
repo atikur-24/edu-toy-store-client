@@ -15,7 +15,7 @@ const Banner = () => {
             <div className='absolute left-1/4 md:left-1/2 md:bottom-24 space-y-4 lg:space-y-7 mr-10 md:mr-14'>
                 <h2 className='text-2xl md:text-5xl font-bold tracking-wide lg:leading-tight text-[#2396DC]'>Pick The Best Toy For Your Kid</h2>
                 <p className='md:tracking-wide lg:leading-7 capitalize text-sm md:text-[18px] md:font-medium text-gray-600'>Enhance Your Child Development with Our Top-Pick Educational Toys, Sparking Curiosity and Joyful Learning Every Step of the Way</p>
-                <button className='my-btn'>Read More</button>
+                <button className='my-btn'>Discover Now</button>
             </div>                
         </div> 
         <div id="slide2" className="carousel-item relative w-full">
