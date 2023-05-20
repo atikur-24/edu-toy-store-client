@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
-import ToysRow from "./ToysRow";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import MyToyRow from "./MyToyRow";
 
-const AllToy = () => {
-    const [toys, setToys] = useState([]);
+const MyToys = () => {
+    const { user } = useContext(AuthContext);
+    const [myToys, setmyToys] = useState([]);
+    
+    const url = `http://localhost:5000/toys?email=${user.email}`;
 
-    useEffect(() => {
-        fetch('http://localhost:5000/toys')
+    useEffect( () => {
+        fetch(url)
             .then(res => res.json())
-            .then(data => setToys(data))
-    }, [])
+            .then(data => setmyToys(data))
+    }, [url])
 
     return (
         <section className="my-container">
@@ -16,17 +20,17 @@ const AllToy = () => {
                 <table className="table w-full">
                     <thead>
                         <tr className="text-[#003366]">
-                            <th className="text-sm">Seller Name</th>
+                            <th className="text-sm">Toy Image</th>
                             <th className="text-sm">Toy Name</th>
                             <th className="text-sm">Sub-category</th>
                             <th className="text-sm">Price</th>
                             <th className="text-sm">Available QTY</th>
-                            <th className="text-sm"></th>
+                            <th className="text-sm">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            toys?.map(toy => <ToysRow key={toy._id} toy={toy} />)
+                            myToys?.map(myToy => <MyToyRow key={myToy._id} myToy={myToy} />)
                         }
                     </tbody>
                 </table>
@@ -35,4 +39,4 @@ const AllToy = () => {
     );
 };
 
-export default AllToy;
+export default MyToys;

@@ -23,7 +23,7 @@ const Navbar = () => {
       </li>
       { user && <>
           <li>
-          <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "default")} >My Toys</NavLink>
+          <NavLink to="/myToys" className={({ isActive }) => (isActive ? "active" : "default")} >My Toys</NavLink>
         </li>
         <li>
           <NavLink to="/addToys" className={({ isActive }) => (isActive ? "active" : "default")} >Add A Toy</NavLink>
@@ -42,7 +42,7 @@ const Navbar = () => {
             <img title={user?.displayName} src={user?.photoURL} alt="profile" />
         </div>
     </div>}
-    { user ? <Link onClick={handleLogout} to='/signUp' className="my-btn">Logout</Link> :
+    { user ? <Link onClick={handleLogout} className="my-btn">Logout</Link> :
     <Link to='/signIn' className="my-btn">Login</Link> }
   </>
 );

@@ -4,7 +4,7 @@ const ToysRow = ({ toy }) => {
 
     return (
         <tr>
-            <td>{sellerName}</td>
+            <td>{sellerName || ""}</td>
             <td>
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
