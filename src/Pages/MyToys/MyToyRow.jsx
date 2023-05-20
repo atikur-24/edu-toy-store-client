@@ -1,7 +1,38 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
-const MyToyRow = ({ myToy }) => {
-    const { name, photo, category, price, quantity } = myToy;
+const MyToyRow = ({ myToy, controls, setControls }) => {
+    const { _id, name, photo, category, price, quantity } = myToy;
+
+    // delete single toy data
+    const handleDeleteToy = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              fetch(`http://localhost:5000/toys/${id}`, {
+                method: 'DELETE'
+              })
+              .then(res => res.json())
+              .then(data => {
+                if(data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Chocolate has been Deleted',
+                        'success'
+                      )                    
+                      setControls(!controls);
+                }
+              })
+            }
+          })
+    }
 
     return (
         <tr>
@@ -17,9 +48,13 @@ const MyToyRow = ({ myToy }) => {
             <td>$ {price}</td>
             <td>{quantity}</td>
             <th>
-                <div className="inline-flex gap-5 text-xl">
-                    <FaEdit className="text-[#003366]" />
-                    <FaTrash className="bg-orange-500/50 p-2 cursor-pointer hover:bg-orange-700" />
+                <div className="inline-flex gap-7 text-xl">
+                    <button>
+                        <FaEdit className="text-[#003366] hover:text-[#2396DC]" />
+                    </button>
+                    <button onClick={ () => handleDeleteToy(_id) }>
+                        <FaTrash className="text-orange-700 hover:text-orange-600" />
+                    </button>
                 </div>
             </th>
         </tr>
