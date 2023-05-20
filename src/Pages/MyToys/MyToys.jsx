@@ -4,15 +4,16 @@ import MyToyRow from "./MyToyRow";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
-    const [myToys, setmyToys] = useState([]);
+    const [myToys, setMyToys] = useState([]);
+    const [controls, setControls] = useState(true)
     
-    const url = `http://localhost:5000/toys?email=${user.email}`;
+    const url = `http://localhost:5000/toys?email=${user?.email}`;
 
     useEffect( () => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setmyToys(data))
-    }, [url])
+            .then(data => setMyToys(data))
+    }, [url, controls] )
 
     return (
         <section className="my-container">
@@ -30,7 +31,7 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            myToys?.map(myToy => <MyToyRow key={myToy._id} myToy={myToy} />)
+                            myToys?.map(myToy => <MyToyRow key={myToy._id} myToy={myToy} controls={controls} setControls={setControls} />)
                         }
                     </tbody>
                 </table>
