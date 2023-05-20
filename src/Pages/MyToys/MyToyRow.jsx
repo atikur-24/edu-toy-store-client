@@ -1,4 +1,5 @@
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToyRow = ({ myToy, controls, setControls }) => {
@@ -49,9 +50,9 @@ const MyToyRow = ({ myToy, controls, setControls }) => {
             <td>{quantity}</td>
             <th>
                 <div className="inline-flex gap-7 text-xl">
-                    <button>
+                    <Link to={`/updateToyInfo/${_id}`} >
                         <FaEdit className="text-[#003366] hover:text-[#2396DC]" />
-                    </button>
+                    </Link>
                     <button onClick={ () => handleDeleteToy(_id) }>
                         <FaTrash className="text-orange-700 hover:text-orange-600" />
                     </button>
