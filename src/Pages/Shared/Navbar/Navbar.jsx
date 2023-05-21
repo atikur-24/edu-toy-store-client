@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import logo from '/public/protoboard.png'
-import logo2 from '/public/protoboard2.png'
+import logo from '/public/toys-logo.png'
+import logo2 from '/public/toys3.png'
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
