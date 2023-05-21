@@ -89,9 +89,9 @@ const AddToys = () => {
                                 <span className="label-text">Choose the sub-category</span>
                             </label>
                             <select name="category" className="select select-bordered">
-                                <option>Engineering Toy</option>
-                                <option>Math Toy</option>
-                                <option>Medical Toy</option>
+                                <option>Engineering</option>
+                                <option>Math</option>
+                                <option>Medical</option>
                             </select>
                         </div>
                         <div className="form-control">

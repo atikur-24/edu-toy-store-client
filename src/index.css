@@ -42,6 +42,14 @@
   @apply font-medium tracking-wide text-gray-500 transition-colors duration-200
 }
 
+.active-tab {
+  @apply  bg-[#003366] text-white font-medium  lg:font-bold px-3 lg:px-5 py-2 lg:py-4 rounded-lg tracking-wide cursor-pointer
+}
+
+.default-tab {
+  @apply  bg-base-200 text-gray-600 font-medium lg:font-bold px-3 lg:px-5 py-2 lg:py-4 rounded-lg tracking-wide cursor-pointer border border-[#003366] transition duration-200
+}
+
 .loader {
   width: 50px;
   height: 50px;
