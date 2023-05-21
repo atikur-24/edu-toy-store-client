@@ -11,14 +11,6 @@
   color: #160041;
 }
 
-.my-bg-color {
-  /* color: #f7f4dc */
-/* 002561 */
-/* rgb(181, 222, 244) */
-/* #b5def4 */
-/* #2396DC */
-}
-
 .my-container{
   @apply px-4 md:px-24 lg:px-8 py-16 lg:py-24 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl
 }

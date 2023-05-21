@@ -45,7 +45,7 @@ const Blogs = () => {
                     </p>
                 </div>
                 <div className='p-7 mb-6 border border-inherit rounded-md'>
-                    <h2 className='text-2xl font-extrabold text-[#003366] tracking-wide mb-5'>3.(b) What is MongoDB aggregate and how does it work?</h2>
+                    <h2 className='text-2xl font-extrabold text-[#003366] tracking-wide mb-5'>4. What is MongoDB aggregate and how does it work?</h2>
                     <p className='text-gray-500 leading-relaxed'>
                     In MongoDB, the aggregate operation is a powerful way to perform advanced data processing and analysis on collections of documents. It allows you to combine multiple stages of operations to transform, filter, group, and analyze data in a flexible and efficient manner.
 The aggregate operation follows a pipeline approach, where you define a sequence of stages that are applied to the documents in the collection. Each stage performs a specific operation on the documents and passes the result to the next stage. The aggregate operation in MongoDB is a powerful tool for performing complex data analysis, generating reports, and deriving insights from your data collections. It offers great flexibility and performance, making it a preferred choice for handling advanced data processing tasks.

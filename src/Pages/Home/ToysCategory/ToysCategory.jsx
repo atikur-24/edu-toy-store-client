@@ -4,11 +4,15 @@ import ToyCard from './ToyCard';
 const ToysCategory = () => {
     const [toys, setToys] = useState([]);
     const [activeTab, setActiveTab] = useState("Engineering");
+    const [loading, setLoading] = useState(true);
 
     useEffect( () => {
         fetch(`http://localhost:5000/toys/cat/${activeTab}`)
             .then(res => res.json())
-            .then(data => setToys(data))
+            .then(data => {
+                setLoading(false)
+                setToys(data)
+            })
     }, [activeTab])
 
     // handle tap when user clicked
@@ -26,6 +30,9 @@ const ToysCategory = () => {
                 <div onClick={ () => handleTabToggle("Medical")} className={activeTab == "Medical" ?  "active-tab" : "default-tab"}>Medical</div>
                 <div onClick={ () => handleTabToggle("Math")} className={activeTab == "Math" ? "active-tab" : "default-tab"}>Math</div>
             </div>
+            { loading && <div className="flex items-center justify-center h-screen">
+               <div className="loader"></div>
+           </div>}
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-14 lg:mt-24 gap-8 justify-items-center'>
                 {
                     toys?.map(toy => <ToyCard key={toy._id} toy={toy} />)
