@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import signUpLogo from "../assets/signUp/93385-login.json";
 import wlcLogo from "../assets/signUp/69160-welcome-blue.json";
@@ -12,6 +12,10 @@ const SignIn = () => {
   const { userSignIn, googleSignIn, forgotPassword } = useContext(AuthContext);
   const emailRef = useRef();
 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/'
+
   const handleLogin = event => {
     event.preventDefault();
 
@@ -23,6 +27,7 @@ const SignIn = () => {
     userSignIn(email, password)
         .then(() => {
             form.reset();
+            navigate(from, {replace: true})
         })
         .catch(error => {
             const message = error.message;
@@ -39,6 +44,7 @@ const SignIn = () => {
 const handleGoogleLogin = () => {
         googleSignIn()
             .then(() => {
+                navigate(from, {replace: true})
             })
             .catch(error => {
                 const message = error.message;
