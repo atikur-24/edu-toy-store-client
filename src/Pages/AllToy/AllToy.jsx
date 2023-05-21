@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ToysRow from "./ToysRow";
+import TopBanner from "../Shared/TopBanner/TopBanner";
 
 const AllToy = () => {
     const [toys, setToys] = useState([]);
@@ -12,6 +13,9 @@ const AllToy = () => {
 
     return (
         <section className="my-container">
+            <TopBanner>
+                All Toys
+            </TopBanner>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     <thead>

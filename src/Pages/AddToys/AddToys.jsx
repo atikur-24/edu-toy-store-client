@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import TopBanner from "../Shared/TopBanner/TopBanner";
 
 const AddToys = () => {
     const { user } = useContext(AuthContext);
@@ -45,6 +46,11 @@ const AddToys = () => {
 
     return (
         <section className="my-container">
+            <div>
+                <TopBanner>
+                    Add A Toy
+                </TopBanner>
+            </div>
             <div>
                 <form onSubmit={ handleAddToy } className="card-body bg-base-200 mt-24 rounded-lg p-20">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

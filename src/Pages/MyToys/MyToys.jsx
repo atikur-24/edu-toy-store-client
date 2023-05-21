@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToyRow from "./MyToyRow";
+import TopBanner from "../Shared/TopBanner/TopBanner";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
@@ -17,7 +18,10 @@ const MyToys = () => {
 
     return (
         <section className="my-container">
-            <div className="overflow-x-auto w-full">
+            <TopBanner>
+                My Toys
+            </TopBanner>
+            <div className="overflow-x-auto w-full mt-20">
                 <table className="table w-full">
                     <thead>
                         <tr className="text-[#003366]">

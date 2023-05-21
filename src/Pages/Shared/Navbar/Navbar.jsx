@@ -110,6 +110,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
+        <hr className="border mt-5"  />
       </div>
     </>
   );
