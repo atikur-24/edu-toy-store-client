@@ -6,7 +6,7 @@ const ToysCategory = () => {
     const [activeTab, setActiveTab] = useState("Engineering");
 
     useEffect( () => {
-        fetch(`http://localhost:5000/toys/${activeTab}`)
+        fetch(`http://localhost:5000/toys/cat/${activeTab}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [activeTab])

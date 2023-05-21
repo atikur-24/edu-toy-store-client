@@ -11,7 +11,6 @@ const myStyles = {
 
 const ToyDetails = () => {
   const loadToy = useLoaderData();
-  console.log(loadToy);
   const { photo, name, price, rating, sellerName, email, quantity, description } = loadToy;
 
   return (

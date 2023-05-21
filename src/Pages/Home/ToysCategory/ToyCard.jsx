@@ -1,9 +1,20 @@
 
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
 
 const ToyCard = ({ toy }) => {
+  const { user } = useContext(AuthContext);
+
+  const notify = () => {
+    if(!user) {
+      return toast("You have to log in first to view details");
+    }
+}
+
   const { _id, name, price, rating, photo } = toy || {};
 
   return (
@@ -18,7 +29,8 @@ const ToyCard = ({ toy }) => {
           <div className='inline-flex items-center gap-3'>
             <Rating className='py-3' style={{maxWidth: 100}} readOnly  value={rating} /> <span className='font-bold text-gray-500'>{rating}</span>
           </div>
-          <Link className="btn btn-primary">View Details</Link>
+          <Link onClick={notify} to={`/details/${_id}`} className="btn btn-primary">View Details</Link>
+          <ToastContainer />
         </div>
       </div>
     </div>
