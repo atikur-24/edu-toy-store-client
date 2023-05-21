@@ -7,9 +7,11 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Lottie from "lottie-react";
+import useTitle from "../../hooks/useTitle.";
 
 const SignUp = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  useTitle('Sign Up')
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);

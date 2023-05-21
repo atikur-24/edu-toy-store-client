@@ -17,7 +17,7 @@ const SignIn = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
 
-  useTitle('SignIn')
+  useTitle('Login')
 
   const handleLogin = event => {
     event.preventDefault();

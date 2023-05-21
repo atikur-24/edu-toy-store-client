@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import MyToyRow from "./MyToyRow";
 import TopBanner from "../Shared/TopBanner/TopBanner";
+import useTitle from "../../hooks/useTitle.";
 
 const MyToys = () => {
     const { user } = useContext(AuthContext);
+    useTitle('My Toys')
     const [myToys, setMyToys] = useState([]);
     const [controls, setControls] = useState(true)
     
