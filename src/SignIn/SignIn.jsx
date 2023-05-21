@@ -7,6 +7,7 @@ import { useContext, useRef } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import google from '../assets/signUp/google.png'
+import useTitle from "../hooks/useTitle.";
 
 const SignIn = () => {
   const { userSignIn, googleSignIn, forgotPassword } = useContext(AuthContext);
@@ -15,6 +16,8 @@ const SignIn = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
+
+  useTitle('SignIn')
 
   const handleLogin = event => {
     event.preventDefault();
