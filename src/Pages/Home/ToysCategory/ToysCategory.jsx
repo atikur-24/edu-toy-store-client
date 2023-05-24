@@ -7,7 +7,7 @@ const ToysCategory = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect( () => {
-        fetch(`https://edu-toys-server-eight.vercel.app/toys/cat/${activeTab}`)
+        fetch(`http://localhost:5000/toys/cat/${activeTab}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false)

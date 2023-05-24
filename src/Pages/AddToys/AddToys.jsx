@@ -26,7 +26,7 @@ const AddToys = () => {
             sellerName, email, photo, name, price, quantity,category, rating, description
         }
 
-        fetch('https://edu-toys-server-eight.vercel.app/toys', {
+        fetch('http://localhost:5000/toys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

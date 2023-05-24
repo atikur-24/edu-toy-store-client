@@ -9,13 +9,13 @@ const AllToy = () => {
     const [searchName, setSearchName] = useState("");
 
     useEffect(() => {
-        fetch('https://edu-toys-server-eight.vercel.app/toys')
+        fetch('http://localhost:5000/toys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
 
     const handleSearch = () => {
-        fetch(`https://edu-toys-server-eight.vercel.app/getbyTitle/${searchName}`)
+        fetch(`http://localhost:5000/getbyTitle/${searchName}`)
           .then((res) => res.json())
           .then((data) => {
             setToys(data);
@@ -26,7 +26,7 @@ const AllToy = () => {
         <section className="my-container">
             <TopBanner>
                 All Toys
-                <div className="form-control">
+                <div className="form-control mt-4">
                     <div className="input-group">
                         <input onChange={(e) => setSearchName(e.target.value)} type="text" placeholder="Search" className="input input-bordered input-info w-full max-w-xs" />
                         <button onClick={handleSearch} className="btn btn-square">
